@@ -1,11 +1,14 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { CarritoService } from '../servicios/carrito/carrito.service';
 
 @Component({
   selector: 'app-item-galeria',
   templateUrl: './item-galeria.component.html',
   styleUrls: ['./item-galeria.component.css']
 })
-export class ItemGaleriaComponent implements OnInit {
+export class ItemGaleriaComponent implements OnInit, OnDestroy {
+
+
 
   title = 'Licoreria';
 
@@ -21,9 +24,37 @@ export class ItemGaleriaComponent implements OnInit {
   @Input()
   nombreItem;
 
-  constructor() { }
+  @Input()
+  titulo;
+
+  @Input()
+  notas;
+
+  //Dependency
+  //Injection
+  //Servicios -> Compartidos
+  constructor(private readonly _carritoService:CarritoService) { 
+
+  }
+
 
   ngOnInit() {
+    console.log('empezo');
+    console.log(this._carritoService.carritoCompras);
+  }
+
+  ngOnDestroy(): void {
+    console.log('termino')
+  }
+
+  agregarCarrito(valorCarrito){
+//    this._carritoService.carritoCompras.push(valorCarrito);
+    const itemCarrito = {
+      valor: valorCarrito,
+      nombreTienda: this.titulo
+    };
+    this._carritoService.carritoCompras.splice(0,0,itemCarrito);   
+    console.log(this._carritoService.carritoCompras); 
   }
 
   alertar(){
@@ -48,8 +79,6 @@ export class ItemGaleriaComponent implements OnInit {
     }
  
   }
-
-  notas = [1,2,3,4,5,6,7,8,9,10]
 
   @Output()
   cambioChela: EventEmitter<boolean> = new EventEmitter()
@@ -80,4 +109,26 @@ class Usuario{
   }
 
 }
+*/
+
+/*
+Ciclo de vida del componente
+ngOnInit -> OnInit
+ngOnDestroy -> OnDestroy
+*/
+
+
+
+/*
+#ModuloNotas (NotasModule)
+  *TablaMostrarMateria
+    _ [] notasPorMateria
+    _ [] nombreBoton
+    _ [] iconoBoton
+    _ () ejeciutoAccion
+  
+  * listaMaterias
+    _ () seleccionarMateria
+
+
 */
