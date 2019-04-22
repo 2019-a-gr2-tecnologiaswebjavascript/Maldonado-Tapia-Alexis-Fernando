@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { CarritoService } from '../servicios/carrito/carrito.service';
+import {itemCarritoCompras} from '../interfaces/item-carrito-compras';
 
 @Component({
   selector: 'app-item-galeria',
@@ -21,7 +22,7 @@ export class ItemGaleriaComponent implements OnInit, OnDestroy {
   @Input()
   textoBoton;
 
-  url = 'https://dpf77bhxauhdh.cloudfront.net/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/c/e/cerveza-corona-extra-355-cc-pack-24-botellas.jpg';
+  url1 = 'https://dpf77bhxauhdh.cloudfront.net/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/c/e/cerveza-corona-extra-355-cc-pack-24-botellas.jpg';
 
   // en varibles const una sola reasignacion
   // var no vamos a utilizar
@@ -32,6 +33,9 @@ export class ItemGaleriaComponent implements OnInit, OnDestroy {
 
   @Input()
   notas;
+
+  @Input()
+  nombreItem;
 
   //Dependency
   //Injection
@@ -50,14 +54,15 @@ export class ItemGaleriaComponent implements OnInit, OnDestroy {
     console.log('termino')
   }
 
-  agregarCarrito(valorCarrito){
+  agregarCarrito(valorCarrito:string){
 //    this._carritoService.carritoCompras.push(valorCarrito);
-    const itemCarrito = {
+    const itemCarrito:itemCarritoCompras = {
       valor: valorCarrito,
-      nombreTienda: this.titulo
+      nombreTienda: this.titulo,
+      fechaCompra:new Date()
     };
-    this._carritoService.carritoCompras.splice(0,0,itemCarrito);   
-    console.log(this._carritoService.carritoCompras); 
+    const respuestaCarrito = this._carritoService.agregarCarritoDeCompras(itemCarrito);
+    console.log(respuestaCarrito);
   }
 
   alertar(){
@@ -89,6 +94,15 @@ export class ItemGaleriaComponent implements OnInit, OnDestroy {
   @Output()
   cambioCerveza: EventEmitter<boolean> = new EventEmitter()
 }
+
+
+/*
+class CarritoCompraClass implements CarritoComprasInterface{
+  
+  valor:string;
+  nombreTienda:string;
+  fechaCompra?:Date;
+}*/
 /*
 @DecoreatorsClase() // -> Funcion que se ejecuta antes de algo
 class Usuario{
@@ -135,3 +149,6 @@ ngOnDestroy -> OnDestroy
 
 
 */
+
+
+// en typescript se utilizan las interfaces para tipar

@@ -23,7 +23,7 @@ export class AppComponent {
       nombre: "papitas",
       descripcion: "a lo bestia",
       titulo: "Don Jose",
-      notas:['Hot Dog', 'Hamburguesa']
+      notas:['Hot Dog', 'Hamburguesa','Papitas']
     },
     {
       nombre: "carnitas",
@@ -35,7 +35,7 @@ export class AppComponent {
       nombre: "chicas",
       descripcion: "cheveres",
       titulo: "Doña Maria",
-      notas:['Motes', 'Fritadas']
+      notas:['Motes', 'Fritadas','Papitas']
     }
   ]
 
@@ -56,6 +56,8 @@ export class AppComponent {
     const verde: string = 'amarillo';
     this.clase = verde;
   }
+
+  estaMostrando = false;
 
   mostrar(estaMostrando){
     this.estaMostrando = estaMostrando;
