@@ -1,9 +1,28 @@
 <h1 [class]="clase" > Titulo {{title}} </h1>
-<!-- {{ Interpolacion }} -->
-<app-item-galeria *ngFor="let flor of arregloFLoresJs" 
-[nombreItem] = "flor.nombre"
-[textoBoton] = "flor.descripcion"
-(cambioChela) = "cambioChela($event)"
-(cambioCerveza) = "cambioCerveza($event)"
->
-</app-item-galeria>
+<!-- {{ Interpolacion }} 
+
+(click = "mostrar(true)")
+(click="mostrar(false)")-->
+
+<pre>
+    {{_carritoService.carritoCompras | json}}
+</pre>
+
+<button (click)="mostrar(true)">Mostrar</button>
+<button (click)="mostrar(false)">Ocultar</button>
+
+<div *ngIf="estaMostrando">
+
+    <app-item-galeria 
+
+    *ngFor="let flor of arregloFLoresJs" 
+    [nombreItem] = "flor.nombre"
+    [textoBoton] = "flor.descripcion"
+    [titulo] = "flor.titulo"
+    [notas]="flor.notas"
+    (cambioChela) = "cambioChela($event)"
+    (cambioCerveza) = "cambioCerveza($event)"
+
+    >
+    </app-item-galeria>
+</div>
