@@ -1,10 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 .rojo{
-    color: red;
+    color:red;
 }
-.verde{
-    color: green;
+
+.contenedor{
+    padding: 40px;
+    margin: 40px;
+    border: 10px black solid;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
-.amarillo{
-    color: yellow;
+
+.item-menu{
+    color: darkblue;
+    margin:10px;
+    border: solid white 2px;
+    float: right;
+}
+
+.item-menu:hover{
+    color: white;
+    background-color: darkblue;
+    transform: scale(1.5,1.5);
+    margin:10px;
+    cursor: pointer;
+    border: grey solid 2px;
+}
+
+.texto-derecha{
+    text-align: right;
 }
