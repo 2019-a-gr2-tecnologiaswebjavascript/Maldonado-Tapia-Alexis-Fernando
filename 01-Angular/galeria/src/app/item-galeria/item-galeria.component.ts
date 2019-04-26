@@ -108,23 +108,16 @@ class CarritoCompraClass implements CarritoComprasInterface{
 class Usuario{
   @DecoratorsVariable()
   private nombre = 'Alex';
-
   constructor(@DecoratorsConstructor() nombre){
-
   }
   @DecoratorsMetodo()
   metodoPublico(){
-
   }
-
   private metodoPrivate(){
-
   }
-
   protected metodoProtected(){
     
   }
-
 }
 */
 
@@ -146,9 +139,13 @@ ngOnDestroy -> OnDestroy
   
   * listaMaterias
     _ () seleccionarMateria
-
-
 */
 
 
+<<<<<<< HEAD
+*/
+
+
+=======
+>>>>>>> desarrollo
 // en typescript se utilizan las interfaces para tipar

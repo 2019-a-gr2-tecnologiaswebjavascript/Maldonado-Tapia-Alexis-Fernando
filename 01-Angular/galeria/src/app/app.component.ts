@@ -69,18 +69,13 @@ export class AppComponent {
 class Flor{
 
   /*
-
   nombre: string;
   descripcion: string;
-
   constructor(nombre: string, descripcion: string){
     this.nombre = nombre;
     this.descripcion = descripcion;
-
   }
-
   TODO LO QUE ESTA ARRIBA SE PUEDE HACER EN LA LINEA DE ABAJO!!!!!!
-
 */
 
   constructor(public nombre: string, public descripcion: string){
