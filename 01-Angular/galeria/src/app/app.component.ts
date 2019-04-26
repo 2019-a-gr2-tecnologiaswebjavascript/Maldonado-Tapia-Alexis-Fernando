@@ -12,8 +12,6 @@ export class AppComponent {
 
   title = 'floreria';
 
-  estaMostrando = false;
-
   arregloFlores = [
     new Flor("Papitas", "a lo bestia"),
     new Flor("Carnitas", "gorditas"),
@@ -25,7 +23,7 @@ export class AppComponent {
       nombre: "papitas",
       descripcion: "a lo bestia",
       titulo: "Don Jose",
-      notas:['Hot Dog', 'Hamburguesa']
+      notas:['Hot Dog', 'Hamburguesa','Papitas']
     },
     {
       nombre: "carnitas",
@@ -37,7 +35,7 @@ export class AppComponent {
       nombre: "chicas",
       descripcion: "cheveres",
       titulo: "Doña Maria",
-      notas:['Motes', 'Fritadas']
+      notas:['Motes', 'Fritadas','Papitas']
     }
   ]
 
@@ -59,6 +57,8 @@ export class AppComponent {
     this.clase = verde;
   }
 
+  estaMostrando = false;
+
   mostrar(estaMostrando){
     this.estaMostrando = estaMostrando;
   }
@@ -69,18 +69,13 @@ export class AppComponent {
 class Flor{
 
   /*
-
   nombre: string;
   descripcion: string;
-
   constructor(nombre: string, descripcion: string){
     this.nombre = nombre;
     this.descripcion = descripcion;
-
   }
-
   TODO LO QUE ESTA ARRIBA SE PUEDE HACER EN LA LINEA DE ABAJO!!!!!!
-
 */
 
   constructor(public nombre: string, public descripcion: string){
