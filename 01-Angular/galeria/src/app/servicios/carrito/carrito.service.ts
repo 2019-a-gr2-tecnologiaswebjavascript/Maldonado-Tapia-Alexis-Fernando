@@ -1,53 +1,10 @@
 import { Injectable } from '@angular/core';
 import { itemCarritoCompras } from '../../interfaces/item-carrito-compras';
-<<<<<<< HEAD
-=======
 import { itemCarritoComprasDetallado } from 'src/app/interfaces/item-carrito-compras-detallados';
->>>>>>> desarrollo
 
 @Injectable()
 export class CarritoService {
     carritoCompras:itemCarritoCompras[] = [];
-<<<<<<< HEAD
-    
-    agregarCarritoDeCompras(itemCarrito:itemCarritoCompras):itemCarritoCompras[]{
-        const identificador = itemCarrito.valor;
-
-        let indiceItem = -1;
-
-        const existeElItem = this.carritoCompras.some(
-            (item:itemCarritoCompras, indice)=>{
-                if(item.valor == identificador){
-                    indiceItem = indice;
-                    return true;
-                }else{
-                    return false;
-                }
-                return item.valor == identificador
-            }
-
-        );
-
-        if(existeElItem){
-            this.añadirAlContador(indiceItem);
-            console.log('Se añadio al carrito');
-        }else{
-            this.añadirAlCarrito(itemCarrito);
-        }
-
-        console.log('Se agrego el item carrito', itemCarrito);
-        return this.carritoCompras;
-    }
-
-    private añadirAlContador(indice:number){
-        this.carritoCompras[indice].cantidad++;
-    }
-
-    private añadirAlCarrito(item:itemCarritoCompras){
-        item.cantidad = 1;
-        this.carritoCompras.splice(0,0,item);
-    }
-=======
     carritoComprasDetallado:itemCarritoComprasDetallado[] = [];
 
     agregarCarritoDeCompras(itemCarrito:itemCarritoCompras):itemCarritoComprasDetallado[]{
@@ -142,7 +99,6 @@ class items {
     cantidad:number;
     valor:string;
 
->>>>>>> desarrollo
 }
 /*
 const respuesta = [1,2,3].forEach( //undefined
