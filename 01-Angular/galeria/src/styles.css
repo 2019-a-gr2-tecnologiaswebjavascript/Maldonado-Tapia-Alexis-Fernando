@@ -15,7 +15,8 @@
 
 .item-menu{
     color: darkblue;
-    margin:10px;
+    margin-top: 10px;
+
     border: solid white 2px;
     float: right;
 }
