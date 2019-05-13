@@ -8,6 +8,8 @@ import { RutaProductosHogarComponent } from './rutas/ruta-productos-hogar/ruta-p
 import { RutaProductosVideojuegosComponent } from './rutas/ruta-productos-videojuegos/ruta-productos-videojuegos.component';
 import { RutaVideojuegosFpsComponent } from './rutas/ruta-videojuegos-fps/ruta-videojuegos-fps.component';
 import { RutaVideojuegosDeportesComponent } from './rutas/ruta-videojuegos-deportes/ruta-videojuegos-deportes.component';
+import { CanActivate } from '@angular/router/src/utils/preactivation';
+import { EstaLogueadoService } from './servicios/guards/esta-logueado.service';
 
 const routes: Routes = [
   {
@@ -16,7 +18,10 @@ const routes: Routes = [
   },
   {
     path:'creditos/:idCredito/:tasaReferencia',
-    component: RutaCreditosComponent
+    component: RutaCreditosComponent,
+    canActivate: [
+      EstaLogueadoService
+    ] 
   },
   {
     path:'productos',
