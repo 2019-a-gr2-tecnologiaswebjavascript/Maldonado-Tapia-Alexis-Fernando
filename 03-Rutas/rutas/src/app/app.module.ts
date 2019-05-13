@@ -11,6 +11,8 @@ import { RutaProductosHogarComponent } from './rutas/ruta-productos-hogar/ruta-p
 import { RutaProductosVideojuegosComponent } from './rutas/ruta-productos-videojuegos/ruta-productos-videojuegos.component';
 import { RutaVideojuegosFpsComponent } from './rutas/ruta-videojuegos-fps/ruta-videojuegos-fps.component';
 import { RutaVideojuegosDeportesComponent } from './rutas/ruta-videojuegos-deportes/ruta-videojuegos-deportes.component';
+import { EstaLogueadoService } from './servicios/guards/esta-logueado.service';
+import { AuthService } from './servicios/auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,10 @@ import { RutaVideojuegosDeportesComponent } from './rutas/ruta-videojuegos-depor
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    EstaLogueadoService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
