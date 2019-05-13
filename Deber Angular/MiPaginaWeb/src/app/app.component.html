@@ -1,59 +1,76 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-
-<div class="header letra">
-    <div class="row">
+<style>
+        div {
+          height: 1000px;
+        }
+        
+      
+        @media only screen and (max-width: 1200px) {
+          div{
+            height: 400px;
+    
+          }
+        }
+        
+        @media only screen and (max-width: 900px) {
+          div{
+            height: 100px;
+    
+          }
+        }
+        </style>
+<div class="header letra" style="height: 70px;">
+    <div class="row" style="height: 10px;">
         <div class="col-md-3">
-            <img src="../assets/img/logo-planetadelibros-home.png"  style="margin-left: 15px">
+            <img src="../assets/img/logo-planetadelibros-home.png"  style="margin-left: 15px" class = "img-fluid">
         </div>
-        <div class="col-md-9">
-            <div class= "item-header">Blogs</div>
-            <div class= "item-header">Novedades</div>
-            <div class= "item-header">Bestsellers</div>
-            <div class= "item-header">Próximamente</div>
-            <div class= "item-header">Editoriales</div>
+        <div class="col-md-9" style="height: 10px;">
+            <div class= "item-header" style="height: 10px;">Blogs</div>
+            <div class= "item-header" style="height: 10px;">Novedades</div>
+            <div class= "item-header" style="height: 10px;">Bestsellers</div>
+            <div class= "item-header" style="height: 10px;">Próximamente</div>
+            <div class= "item-header" style="height: 10px;">Editoriales</div>
         </div>
     </div>
 
             
 </div>
 
-<div class="row row-nav-bar letra">
-    <div class="col-md-1"></div>
-    <div class="col-md-3 relleno">
-            <i class="material-icons">view_headline</i>  Temáticas
+<div class="row row-nav-bar letra" style="height: 60px;">
+    <div class="col-md-1" style="height: 60px;"></div>
+    <div class="col-md-3 relleno" style="height: 60px;">
+            Temáticas
     </div>
-    <div class="col-md-5 tamaño-letra">          
-        <i class="material-icons">search</i>  Escribe aquí el título o el autor
+    <div class="col-md-5 tamaño-letra" style="height: 60px;">          
+        Escribe aquí el título o el autor
     </div>
-    <div class="col-sm-1 buscar">
+    <div class="col-sm-1 buscar" style="height: 60px;">
         Buscar
     </div>
 
     <div class="col-sm-2 tamaño-letra">
-            <i class="material-icons">person</i>  Entrar
+             Entrar
     </div>
 </div>
 
-<div class="row letra titulo">CÓMIC Y MANGA</div>
-<div class="row letra subtitulo">Todos los cómics, mangas y novelas ilustradas. Encuentra el último número de la serie y descubre todas las colecciones de Planeta Cómic.</div>
-<div class="row background letra" style="font-size: 16px; height: 60px; padding: 15px">
+<div class="row letra titulo" style="height: 40px;">CÓMIC Y MANGA</div>
+<div class="row letra subtitulo" style="height: 40px;">Todos los cómics, mangas y novelas ilustradas. Encuentra el último número de la serie y descubre todas las colecciones de Planeta Cómic.</div>
+<div class="row background letra" style="font-size: 16px; height: 80px; padding: 15px">
     <div class="col-md-4" ><b>Planeta de Libros/</b>Comics y Libros</div>
     <div class="col-md-5 texto-derecha">
         <b>¿Te gustan los cómics y las novelas gráficas? ¡Compártelo!</b>
     </div>
     <div class="col-md-3">
-            <img class="icon" src="/../assets/img/fb.svg">
-            <img class="icon" src="/../assets/img/twitter.svg">
-            <img class="icon" src="/../assets/img/pinterest.svg">
-            <img class="icon" src="/../assets/img/in.svg">
-            <img class="icon" src="/../assets/img/gplus.svg">
-            <img class="icon" src="/../assets/img/wapp.svg">
+            <img class="icon img-fluid" src="/../assets/img/fb.svg">
+            <img class="icon img-fluid" src="/../assets/img/twitter.svg">
+            <img class="icon img-fluid" src="/../assets/img/pinterest.svg">
+            <img class="icon img-fluid" src="/../assets/img/in.svg">
+            <img class="icon img-fluid" src="/../assets/img/gplus.svg">
+            <img class="icon img-fluid" src="/../assets/img/wapp.svg">
     </div>
 </div>
 
-<div class="row background letra" style="height:800px; margin-top: 5px; padding-bottom: 10px">
-    <div class="row">
+<div class="row background letra" style="margin-top: 5px; padding-bottom: 10px">
+    <div class="row" style="height: 60px;">
         <div class="col-lg-12" style="margin: 15px">
             <b>MANGA, CÓMICS Y NOVELAS GRÁFICAS</b>
             <td></td>
@@ -61,14 +78,64 @@
         </div>
     </div>
     <div class="row">
-        <app-imagen-comic style="margin-left: 5px; height: 320px;"
-            *ngFor="let comic of arregloComics"
-            [imagen] = "comic.url"
-        >
-        </app-imagen-comic>
-
+        <div class="col imgcomicMain">
+            <div >
+                <img src="../assets/img/deadpool.jpg" class="img-fluid">
+            </div>
+        </div>
+        <div class="col imgcomicMain">
+                <div style="height:60px">
+                        <img src="../assets/img/infinitiwar.jpg" class="img-fluid">
+                </div>
+        </div>
+        <div class="col imgcomicMain">
+                <div style="height:60px">
+                        <img src="../assets/img/xmen2.jpg" class="img-fluid">
+                </div>
+        </div>
+        <div class="col imgcomicMain">
+                <div style="height:60px">
+                        <img src="../assets/img/oldman.jpg" class="img-fluid">
+                </div>
+        </div>
+        <div class="col imgcomicMain">
+                <div style="height:60px">
+                        <img src="../assets/img/magneto.jpg" class="img-fluid">
+                </div>
+        </div>
+ 
     </div>
+    <div class="row">
+            <div class="col imgcomicMain">
+                <div style="height:60px">
+                        <img src="../assets/img/deadpool.jpg" class="img-fluid">
+                </div>
+            </div>
+            <div class="col imgcomicMain">
+                <div style="height:60px">
+                    <img src="../assets/img/infinitiwar.jpg" class="img-fluid">
+                </div>
+            </div>
+            <div class="col imgcomicMain">
+                    <div style="height:60px">
+                            <img src="../assets/img/xmen2.jpg" class="img-fluid">
+                    </div>
+            </div>
+            <div class="col imgcomicMain">
+                    <div style="height:60px">
+                            <img src="../assets/img/oldman.jpg" class="img-fluid">
+                    </div>
+            </div>
+            <div class="col imgcomicMain">
+                    <div style="height:60px">
+                            <img src="../assets/img/magneto.jpg" class="img-fluid">
+                    </div>
+            </div>
+     
+        </div>
 </div>
+
+    
 <div class="row background letra" style="height:70px; margin-top: 0px; align-content: center">
     <button class="boton">Todos los Comics</button>
 </div>

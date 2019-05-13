@@ -50,7 +50,7 @@
 }
 
 .row-nav-bar{
-    height: 60px;
+
     align-content: center;
     background-color: gainsboro;
     margin-left: 0%;
@@ -95,6 +95,14 @@
     margin-left: 45%;
     margin-bottom: 15px;
     font-size: 20px
+}
+
+.imgcomicMain{
+    width: 200px;
+    height: 320px;
+    margin-left:40px;
+    margin-top:0px;
+
 }
 
 .material-icons {
