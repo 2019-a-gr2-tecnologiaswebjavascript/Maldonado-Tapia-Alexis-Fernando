@@ -142,4 +142,10 @@ ngOnDestroy -> OnDestroy
 */
 
 
+<<<<<<< HEAD
+*/
+
+
+=======
+>>>>>>> desarrollo
 // en typescript se utilizan las interfaces para tipar
