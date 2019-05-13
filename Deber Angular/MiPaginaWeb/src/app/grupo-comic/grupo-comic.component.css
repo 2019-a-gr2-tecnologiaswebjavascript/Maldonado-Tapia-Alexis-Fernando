@@ -1,0 +1,38 @@
+.banner{
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 200px;
+    
+}
+
+.titulo{
+    margin-top: 40px;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 30px;
+    font-weight: 900
+}
+
+.subtitulo{
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+    font-size: 20px;
+    font-weight: 400
+}
+
+.background{
+    background-color: gainsboro;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+
+}
+
+.imgcomic{
+    width: 200px;
+    height: 320px;
+    margin-top:0px;
+    margin-left:40px
+}
