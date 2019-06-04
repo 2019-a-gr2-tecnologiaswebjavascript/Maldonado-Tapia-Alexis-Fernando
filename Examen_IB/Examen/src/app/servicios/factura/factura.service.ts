@@ -18,7 +18,7 @@ export class FacturaService {
     var direccion:string = formulario.controls.direccion.value;
     var telefono:string = formulario.controls.telefono.value;
     var correo:string = formulario.controls.correo.value;
-    console.log(this.valorFactura+'-')
+    this.nombreCajero = this._login.nombreCajero;
     this.listaFacturas.splice(0,0,new nuevaFactura(nombre, cedula, telefono, direccion, correo, this.valorFactura, this.nombreCajero))
     this.valorFactura = 0;
     console.log(this.listaFacturas);

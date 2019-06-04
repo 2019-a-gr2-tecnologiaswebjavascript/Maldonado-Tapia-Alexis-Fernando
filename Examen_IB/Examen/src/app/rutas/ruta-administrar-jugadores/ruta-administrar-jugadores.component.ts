@@ -35,7 +35,7 @@ export class RutaAdministrarJugadoresComponent implements OnInit {
       }
 
     }
-    const url = ['gestionar-grupos','gestionar-jugador','crear-jugador'];
+    const url = ['gestionar-grupos','crear-jugador'];
     this._url.navigate(url, parametros);
   }
 

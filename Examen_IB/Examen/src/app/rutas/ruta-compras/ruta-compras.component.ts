@@ -23,7 +23,7 @@ export class RutaComprasComponent implements OnInit {
 
   guardarFactura(formulario){
     this._factura.guardarFactura(formulario);
-    this._detalleFactura.disminuirDetalle;
+    this._detalleFactura.limpiarDetalles;
     this.listaDetalles = []
     this.valorFactura = 0
   }

@@ -31,13 +31,11 @@ const routes: Routes = [
       },
       {
         path: 'gestionar-jugador',
-        component: RutaAdministrarJugadoresComponent,
-        children:[
-          {
-            path: 'crear-jugador',
-            component: RutaCrearJugadorComponent
-          }
-      ]
+        component: RutaAdministrarJugadoresComponent
+      },
+      {
+        path: 'crear-jugador',
+        component: RutaCrearJugadorComponent
       }
     ]
   },
