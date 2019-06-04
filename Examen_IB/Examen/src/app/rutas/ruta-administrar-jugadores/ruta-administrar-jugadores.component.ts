@@ -28,6 +28,20 @@ export class RutaAdministrarJugadoresComponent implements OnInit {
     this.listaJugadores = this._jugadorService.listaJugadoresMostrar;
   }
 
+  ngOnChanges(){
+    const parametrosConsulta$ = this._route.queryParams;
+
+    parametrosConsulta$.subscribe(
+      (parametrosConsulta)=> {
+        this.equipoNombre = parametrosConsulta.equipoNombre;
+      }
+    );
+    console.log('buscarJugadorXEquipo');
+    this._jugadorService.buscarJugadorXEquipo(this.equipoNombre);
+    this.listaJugadores = this._jugadorService.listaJugadoresMostrar;
+  }
+  
+
   crearJugador(){
     const parametros = {
       queryParams: {
@@ -37,6 +51,11 @@ export class RutaAdministrarJugadoresComponent implements OnInit {
     }
     const url = ['gestionar-grupos','crear-jugador'];
     this._url.navigate(url, parametros);
+  }
+
+  volver(){
+    const url = ['principal'];
+    this._url.navigate(url);
   }
 
   buscarJugador(){

@@ -21,9 +21,9 @@ export class RutaCrearEquipoComponent implements OnInit {
     var liga = ((<HTMLInputElement>document.getElementById("liga")).value);
     var fecha = ((<HTMLInputElement>document.getElementById("fecha")).value);
     var copas = ((<HTMLInputElement>document.getElementById("copas")).value);
-    var campeon = ((<HTMLInputElement>document.getElementById("campeonActualSi")).value);
+    var campeon:boolean = Boolean(((<HTMLInputElement>document.getElementById("campeonActual")).value));
     var fechaSplit = fecha.split('/');
-    this._equipoService.agregarEquipo(new equipo(nombre, liga, new Date(Number(fechaSplit[0]),Number(fechaSplit[1]),Number(fechaSplit[2])), Number(copas), Boolean(campeon)));
+    this._equipoService.agregarEquipo(new equipo(nombre, liga, new Date(Number(fechaSplit[0]),Number(fechaSplit[1]),Number(fechaSplit[2])), Number(copas), campeon));
     const url = ['gestionar-grupos'];
     this._url.navigate(url);
 

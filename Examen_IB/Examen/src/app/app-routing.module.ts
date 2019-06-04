@@ -20,32 +20,53 @@ const routes: Routes = [
   {
     path:'principal',
     component:RutaPrincipalComponent,
+    canActivate:[
+      EstaLogueadoService
+    ]
   },
   {
     path:'gestionar-grupos',
     component:RutaAdministrarGruposComponent,
+    canActivate:[
+      EstaLogueadoService
+    ],
     children:[
       {
         path:'crear-equipo',
-        component: RutaCrearEquipoComponent
+        component: RutaCrearEquipoComponent,
+        canActivate:[
+          EstaLogueadoService
+        ]
       },
       {
         path: 'gestionar-jugador',
-        component: RutaAdministrarJugadoresComponent
+        component: RutaAdministrarJugadoresComponent,
+        canActivate:[
+          EstaLogueadoService
+        ]
       },
       {
         path: 'crear-jugador',
-        component: RutaCrearJugadorComponent
+        component: RutaCrearJugadorComponent,
+        canActivate:[
+          EstaLogueadoService
+        ],
       }
     ]
   },
   {
     path:'comprar',
-    component:RutaComprasComponent
+    component:RutaComprasComponent,
+    canActivate:[
+      EstaLogueadoService
+    ],
   },
   {
     path:'revisar',
-    component: RutaRevisarComprasComponent
+    component: RutaRevisarComprasComponent,
+    canActivate:[
+      EstaLogueadoService
+    ],
   }
 ];
 

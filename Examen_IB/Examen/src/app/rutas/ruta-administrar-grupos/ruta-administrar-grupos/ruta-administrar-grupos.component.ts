@@ -46,6 +46,11 @@ export class RutaAdministrarGruposComponent implements OnInit {
     this._router.navigate(url, parametros);
   }
 
+  volver(){
+    const url = ['principal'];
+    this._router.navigate(url);
+  }
+
 
 
 }
