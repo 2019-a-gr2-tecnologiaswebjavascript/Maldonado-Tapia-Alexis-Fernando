@@ -1,0 +1,46 @@
+<div>
+
+  <div class="row">
+      <form
+      #formularioFactura="ngForm"
+      novalidate
+      (submit)="buscarFactura(formularioFactura)"
+      >
+        <div class="form-group">
+        <label for="filtro">Filtro:</label>
+        <input type="text" 
+        required
+        name="filtro" 
+        id="filtro"
+        [(ngModel)]="filtro"
+        #vtFiltro = "ngModel"
+        >
+        </div>
+      
+        
+        <button type="submit">Guardar</button>
+        </form>
+  </div>
+  <div class="row">
+    <table>
+      <thead>
+        <th>Nombre</th>
+        <th>Cajero</th>
+        <th>Cedula</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Total</th>
+      </thead>
+      <tbody *ngFor = "let factura of listaFacturas">
+        <th>{{factura.nombre}}</th>
+        <th>{{factura.cajero}}</th>
+        <th>{{factura.cedula}}</th>
+        <th>{{factura.direccion}}</th>
+        <th>{{factura.telefono}}</th>
+        <th>{{factura.correo}}</th>
+        <th>{{factura.total}}</th>
+      </tbody>
+    </table>
+  </div>
+</div>

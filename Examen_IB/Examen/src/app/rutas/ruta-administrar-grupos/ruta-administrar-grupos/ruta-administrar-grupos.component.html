@@ -1,0 +1,45 @@
+<div>
+  
+  <div class="row">
+    <div class="col-md-6">
+        <label for="buscar">Buscar: </label>
+        <input type="text" name="buscar" id="buscar">
+    </div>
+    <div class="col-md-6">
+      <button (click)="buscarEquipo()">
+          Buscar
+        </button>
+        <button (click)="crearEquipo()">
+          Crear
+        </button>
+    </div>      
+  </div>
+  <div class="row">
+    <table style="width: 100%">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Liga</th>
+          <th>Fecha Creacion</th>
+          <th>Copas Internacionales</th>
+          <th>Campeon Actual</th>
+          <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let equipo of listaEquipos">
+      <th>{{equipo.nombre}}</th>
+      <th>{{equipo.liga}}</th>
+      <th>{{equipo.fechaCreacion}}</th>
+      <th>{{equipo.numeroCopasInternacionales}}</th>
+      <th>{{equipo.campeonActual}}</th>
+      <th>
+        <button (click)="eliminarEquipo(equipo.nombre)">Eliminar</button>
+        <button (click)="verJugadores(equipo.nombre)">Jugadores</button>
+      </th>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
+
+<router-outlet></router-outlet>

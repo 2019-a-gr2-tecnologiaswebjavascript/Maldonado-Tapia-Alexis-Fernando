@@ -13,7 +13,7 @@ import { EstaLogueadoService } from './servicios/guards/esta-logueado.service';
 
 const routes: Routes = [
   {
-    path:'home/app',
+    path:'home',
     component: RutaHomeComponent
   },
   {

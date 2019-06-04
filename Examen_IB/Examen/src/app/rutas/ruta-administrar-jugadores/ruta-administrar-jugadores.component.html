@@ -1,0 +1,42 @@
+<div>
+    <div class="row">
+        <p>Jugadores</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="buscarJugador"></label>
+          <input type="text" name="buscarJugador" id="buscarJugador">
+        </div>
+        <div class="col-md-6">
+          <button (click)="buscarJugador()">Buscar</button>
+          <button (click)="crearJugador()">Crear</button>
+        </div>
+      </div>
+  <table>
+      <table style="width: 100%">
+          <thead>
+            <tr>
+              <th>Id Jugador</th>
+              <th>Numero Camiseta</th>
+              <th>Nombre Camiseta</th>
+              <th>Nombre Jugador</th>
+              <th>Fecha Ingreso</th>
+              <th>Goles</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let jugador of listaJugadores">
+          <th>{{jugador.idJugador}}</th>
+          <th>{{jugador.numeroCamiseta}}</th>
+          <th>{{jugador.nombreCamiseta}}</th>
+          <th>{{jugador.nombreCompletoJugador}}</th>
+          <th>{{jugador.fechaIngresoEquipo}}</th>
+          <th>{{jugador.goles}}</th>
+          <th>
+            <button (click)="eliminarJugador(jugador.idJugador)">Eliminar</button>
+          </th>
+          </tbody>
+        </table>
+  </table>
+</div>
+
+<router-outlet></router-outlet>
