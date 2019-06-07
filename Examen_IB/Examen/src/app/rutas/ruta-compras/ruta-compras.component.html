@@ -1,0 +1,112 @@
+<div class="row">
+  <div class="col-md-6">
+      <form
+      #formularioFactura="ngForm"
+      novalidate
+      (submit)="guardarFactura(formularioFactura)"
+      >
+        <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input type="text" 
+        required
+        name="nombre" 
+        id="nombre"
+        [(ngModel)]="nombre"
+        #vtNombre = "ngModel"
+        >
+        </div>
+      
+        <div class="form-group">
+          <label for="cedula">Cedula</label>
+          <input type="text" 
+          required
+          name="cedula" 
+          id="cedula"
+          minlength="10"
+          maxlength="10"
+          pattern="([0-9]{10})"
+          [(ngModel)]="cedula"
+          #vtApellido = "ngModel"
+        >
+        </div>
+      
+        <div class="form-group">
+        <label for="direccion">Direccion:</label>
+        <input type="text" 
+        required
+        name="direccion" 
+        id="direccion"
+        [(ngModel)]="direccion"
+        #vtDireccion = "ngModel"
+        >
+        </div>
+      
+        <div class="form-group">
+        <label for="telefono">Telefono</label>
+        <input type="text" 
+        required
+        name="telefono" 
+        id="telefono"
+        [(ngModel)]="telefono"
+        #vtTelefono = "ngModel"
+        >
+        </div>
+      
+        <div class="form-group">
+        <label for="correo">Correo</label>
+        <input type="text" 
+        required
+        name="correo" 
+        id="correo"
+        [(ngModel)]="correo"
+        #vtDireccion = "ngModel"
+        >
+        </div>
+
+        <button type="submit">Guardar</button>
+        </form>
+      
+  </div>
+
+  <div class="col-md-6">
+    <p>{{nombreCajero}}</p>
+    <p>{{valorFactura}}</p>
+    <table>
+      <thead>
+        <th>Nombre Jugador<th>
+        <th>Valor</th>
+        <th>Acciones</th>
+      </thead>
+      <tbody *ngFor = "let jugador of listaJugadores">
+        <th>{{jugador.nombreCamiseta}}</th>
+        <th>{{jugador.valor}}</th>
+        <th>
+          <button (click)="aumentarPrecioFactura(jugador)">+</button>
+        </th>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="row">Detalle Factura</div>
+  <div class="row">
+    <table>
+      <thead>
+          <th>Nombre Jugador<th>
+          <th>Valor</th>
+          <th>Cantidad</th>
+          <th>Acciones</th>
+        </thead>
+        <tbody *ngFor = "let detalle of listaDetalles">
+          <th>{{detalle.nombreJugador}}</th>
+          <th>{{detalle.precio}}</th>
+          <th>{{detalle.cantidad}}</th>
+          <th>
+            <button (click)="disminuirPrecioFactura(detalle)">-</button>
+          </th>
+        </tbody>
+      </table>
+  </div>
+  
+
+
+</div>
