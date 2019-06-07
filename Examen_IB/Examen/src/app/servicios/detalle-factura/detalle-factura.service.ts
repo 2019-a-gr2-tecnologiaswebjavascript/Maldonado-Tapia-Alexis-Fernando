@@ -53,5 +53,6 @@ export class DetalleFacturaService {
 
   limpiarDetalles(){
     this.listaDetalle = []
+    
   }
 }

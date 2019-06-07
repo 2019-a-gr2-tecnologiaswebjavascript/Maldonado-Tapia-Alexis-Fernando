@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { factura } from 'src/app/interfaces/factura';
 import { LoginServiceService } from '../login-service.service';
+import { DetalleFacturaService } from '../detalle-factura/detalle-factura.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class FacturaService {
   listaFacturasMostrar:factura[] = [];
   valorFactura:number = 0;
   nombreCajero:string = this._login.nombreCajero;
-  constructor(private readonly _login:LoginServiceService) { }
+  constructor(private readonly _login:LoginServiceService, private readonly _detalle:DetalleFacturaService ) { }
 
   guardarFactura(formulario){
     var nombre:string = formulario.controls.nombre.value;
@@ -21,7 +22,9 @@ export class FacturaService {
     this.nombreCajero = this._login.nombreCajero;
     this.listaFacturas.splice(0,0,new nuevaFactura(nombre, cedula, telefono, direccion, correo, this.valorFactura, this.nombreCajero))
     this.valorFactura = 0;
+    this._detalle.limpiarDetalles();
     console.log(this.listaFacturas);
+    
   }
 
   cambiarTotalFactura(valor:number){
