@@ -24,7 +24,6 @@ export class DetalleFacturaService {
     )){
       this.listaDetalle[indice].cantidad --;
     }else{
-      
       this.listaDetalle.splice(indice, 1);
     }
     console.log('los disminui')

@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Detalles Factura
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+   
+      <ion-row>
+        <ion-col>Jugador</ion-col>
+        <ion-col>Cantidad</ion-col>
+        <ion-col>Precio</ion-col>
+      </ion-row>
+  
+      <ion-row *ngFor = "let factura of detallesFactura">
+          <ion-col>{{factura.fkJugador.nombreCamiseta}}</ion-col>        
+          <ion-col>{{factura.cantidad}}</ion-col>
+          <ion-col>{{factura.fkJugador.precio}}</ion-col>
+      </ion-row>
+    
+      
+  </ion-content>
+  

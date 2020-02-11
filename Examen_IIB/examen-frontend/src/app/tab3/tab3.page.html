@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Mis Facturas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-row>
+      <ion-col>
+          <ion-searchbar animated = "true" (ionInput)="onChange($event)"></ion-searchbar>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="buscar()">Buscar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>Nombre Cliente</ion-col>
+      <ion-col>Fecha Compra</ion-col>
+      <ion-col>Total</ion-col>
+      <ion-col>Cajero</ion-col>
+      <ion-col>Acciones</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor = "let factura of listaFacturasMostrar">
+        <ion-col>{{factura.nombreCliente}}</ion-col>        
+        <ion-col>{{factura.fecha}}</ion-col>
+        <ion-col>{{factura.total}}</ion-col>
+        <ion-col>{{factura.cajero}}</ion-col>
+        <ion-col><ion-button (click)="verDetalleFactura(factura)"><ion-icon name="list"></ion-icon></ion-button></ion-col>
+    </ion-row>
+  
+    
+</ion-content>

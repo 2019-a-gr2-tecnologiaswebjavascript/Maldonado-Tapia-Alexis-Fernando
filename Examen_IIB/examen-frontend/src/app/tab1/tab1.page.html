@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Administrar Equipos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+      <ion-searchbar animated = "true" (ionInput)="onChange($event)"></ion-searchbar>
+  </ion-row>
+    <ion-row>
+        <ion-col> <ion-button (click)="administrarGrupos()">Crear</ion-button></ion-col>
+    </ion-row>
+
+  <ion-row>
+    <ion-col>Nombre Equipo</ion-col>
+    <ion-col>Liga</ion-col>
+    <ion-col>Numero de Copas</ion-col>
+    <ion-col>Campeon Actual</ion-col>
+    <ion-col>Acciones</ion-col>
+  </ion-row>
+
+  <app-row-table *ngFor="let equipo of listaEquiposVisibles"
+    [id] = 'equipo.id' 
+    [nombre] = 'equipo.nombre'
+    [liga] = 'equipo.liga'
+    [numeroCopas] = equipo.numeroCopasInternacionales
+    [campeonActual]=equipo.campeonActual
+  ></app-row-table>
+
+
+
+  <router-outlet></router-outlet>
+</ion-content>
