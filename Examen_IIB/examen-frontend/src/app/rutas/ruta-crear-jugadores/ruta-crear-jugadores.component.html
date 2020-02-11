@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Crear Jugador
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>  
+      <ion-row>
+          <form
+          #formularioJugador="ngForm"
+          novalidate
+          (submit)="guardarJugador(formularioJugador)"
+          >
+            <div class="form-group">
+                <ion-item>
+                  <ion-label position="floating" for="nombre">Nombre</ion-label>
+                  <ion-input type="text" placeholder="Nombre"
+                  required
+                  name="nombre" 
+                  id="nombre"
+                  [(ngModel)]="nombre"
+                  #vtNombre = "ngModel"
+                  ></ion-input>
+                </ion-item>               
+            </div>
+  
+            <div class="form-group">
+                <ion-item>
+                  <ion-label position="floating" for="nombreCamiseta">Nombre Camiseta</ion-label>
+                  <ion-input type="text" placeholder="Nombre Camiseta"
+                  required
+                  name="nombreCamiseta" 
+                  id="nombreCamiseta"
+                  [(ngModel)]="nombreCamiseta"
+                  #vtNombre = "ngModel"
+                  ></ion-input>
+                </ion-item>               
+            </div>
+  
+            <div class="form-group">
+                <ion-item>
+                  <ion-label position="floating" for="numeroCamiseta">Numero Camiseta</ion-label>
+                  <ion-input type="number" placeholder="Número Camiseta"
+                  required
+                  name="numeroCamiseta" 
+                  id="numeroCamiseta"
+                  [(ngModel)]="numeroCamiseta"
+                  #vtNombre = "ngModel"
+                  ></ion-input>
+                </ion-item>               
+            </div>
+  
+            <div class="form-group">
+                <ion-item>
+                  <ion-label position="floating" for="fecha">Fecha Ingreso:</ion-label>
+                  <ion-datetime displayFormat="MMM DD, YYYY" placeholder="Select Date"
+                  required
+                  name="fecha" 
+                  id="fecha"
+                  [(ngModel)]="fecha"
+                  #vtNombre = "ngModel"
+                  >
+  
+                  </ion-datetime>
+                </ion-item>               
+            </div>
+  
+            <div class="form-group">
+                <ion-item>
+                  <ion-label position="floating" for="precio">Precio:</ion-label>
+                  <ion-input type="text" placeholder="Precio $"
+                  required
+                  name="precio" 
+                  id="precio"
+                  [(ngModel)]="precio"
+                  #vtNombre = "ngModel"
+                  >
+  
+                  </ion-input>
+                </ion-item>               
+            </div>
+  
+            <div class="form-group">
+                <ion-item>
+                  <ion-label position="floating" for="goles">Goles:</ion-label>
+                  <ion-input type="text" placeholder="Goles"
+                  required
+                  name="goles" 
+                  id="goles"
+                  [(ngModel)]="goles"
+                  #vtNombre = "ngModel"
+                  >
+  
+                  </ion-input>
+                </ion-item>               
+            </div>
+            
+            <ion-button type="submit">Guardar</ion-button>
+            </form>
+      </ion-row>
+      <router-outlet></router-outlet>
+    </ion-content>
+  

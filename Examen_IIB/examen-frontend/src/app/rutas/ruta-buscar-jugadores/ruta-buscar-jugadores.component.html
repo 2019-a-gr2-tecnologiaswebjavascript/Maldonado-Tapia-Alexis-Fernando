@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Administrar Jugadores {{equipoNombre}}
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+    <ion-row>
+        <ion-searchbar animated = "true" (ionInput)="onChange($event)"></ion-searchbar>
+    </ion-row>
+      <ion-row>
+          <ion-col> <ion-button (click)="crearJugadores()">Crear</ion-button></ion-col>
+      </ion-row>
+  
+    <ion-row>
+      <ion-col>Nombre Jugador</ion-col>
+      <ion-col>Num Camiseta</ion-col>
+      <ion-col>Precio</ion-col>
+      <ion-col>Acciones</ion-col>
+    </ion-row>
+  
+    <app-row-table-jugador *ngFor="let jugador of listaJugadoresVisibles"
+    [id] = 'jugador.id'
+    [numeroCamiseta] = 'jugador.numeroCamiseta'
+    [nombreCamiseta] = 'jugador.nombreCamiseta'
+    [precio] = jugador.precio
+    [equipoId] = jugador.fkEquipoFutbol.id 
+    [equipoActual] = equipoId
+    ></app-row-table-jugador>
+    <router-outlet></router-outlet>
+  </ion-content>
+  

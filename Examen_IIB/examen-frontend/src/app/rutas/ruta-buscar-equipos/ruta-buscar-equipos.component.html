@@ -1,0 +1,97 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Crear Equipo
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>  
+    <ion-row>
+        <form
+        #formularioEquipo="ngForm"
+        novalidate
+        (submit)="guardarEquipo(formularioEquipo)"
+        >
+          <div class="form-group">
+              <ion-item>
+                <ion-label position="floating" for="nombre">Nombre</ion-label>
+                <ion-input type="text" placeholder="Nombre"
+                required
+                name="nombre" 
+                id="nombre"
+                [(ngModel)]="nombre"
+                #vtNombre = "ngModel"
+                ></ion-input>
+              </ion-item>               
+          </div>
+
+          <div class="form-group">
+              <ion-item>
+                <ion-label position="floating" for="liga">Liga</ion-label>
+                <ion-input type="text" placeholder="Liga"
+                required
+                name="liga" 
+                id="liga"
+                [(ngModel)]="liga"
+                #vtNombre = "ngModel"
+                ></ion-input>
+              </ion-item>               
+          </div>
+
+          <div class="form-group">
+              <ion-item>
+                <ion-label position="floating" for="fecha">Fecha:</ion-label>
+                <ion-datetime displayFormat="MMM DD, YYYY" placeholder="Select Date"
+                required
+                name="fecha" 
+                id="fecha"
+                [(ngModel)]="fecha"
+                #vtNombre = "ngModel"
+                >
+
+                </ion-datetime>
+              </ion-item>               
+          </div>
+
+          <div class="form-group">
+              <ion-item>
+                <ion-label position="floating" for="copas">Numero Compas Internacionales:</ion-label>
+                <ion-input type="text" placeholder="# Copas Internacionales"
+                required
+                name="copas" 
+                id="copas"
+                [(ngModel)]="copas"
+                #vtNombre = "ngModel"
+                >
+
+                </ion-input>
+              </ion-item>               
+          </div>
+
+          <div class="form-group">
+              <ion-item>
+                <ion-row>
+                  <ion-col>
+                    <ion-label position="floating" for="campeonActual">Campeon Actual</ion-label>
+                  </ion-col>
+                  <ion-col>
+                    <ion-toggle color="primary"
+                    required
+                    name="campeonActual" 
+                    id="campeonActual"
+                    [(ngModel)]="campeonActual"
+                    #vtNombre = "ngModel"
+                    
+                    >
+                    </ion-toggle>
+                  </ion-col>
+                </ion-row>
+              </ion-item>               
+          </div>
+          <ion-button type="submit">Guardar</ion-button>
+          </form>
+    </ion-row>
+    <router-outlet></router-outlet>
+  </ion-content>
+  
